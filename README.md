@@ -1,5 +1,14 @@
-# proyecto2021
-Estructura de Proyecto Lab de Compu II - 2021
+# Simulador de Guitarra
+Esta página corresponde a una simulación para el aprendizaje de acordes de guitarra.
+
+## Autores
+| Autor | Email |
+| ------------- | ------------- |
+| Agustina Araya  | 2009248@ucc.edu.ar |
+
+## Tecnologías utilizadas
+* HTML5
+* CSS3
 
 ### Requisitos del Primer Parcial
 - [X] El proyecto debe estar subido al repositorio adecuado "Proyecto2021-ApellidoAlumno1-ApellidoAlumno2"
@@ -9,8 +18,8 @@ Estructura de Proyecto Lab de Compu II - 2021
 - [X] Emplear ```<header></header>```. En el contenido de la cabecera debe haber un título ```<h1></h1>```, puede tener color de fondo, algún logotipo, etc.
 - [ ] Modificar el Readme.MD y colocar información del proyecto/página (mínimamente: título del proyecto, autores, link de gh-pages, contenido de la página,  listado de tecnologías usadas, etc)
 - [ ] Publicar la Web empleando GitHubPages
-- [ ] La estructura de la página debe estar definida con ```<div></div>```
-- [ ] Debe contener al menos 3 elementos de tipo ```<input>``` o ```<select>``` ó ```<button>``` que le permitan al usuario ingresar valores para poder realizar un cálculo de un ejercicio.
+- [X] La estructura de la página debe estar definida con ```<div></div>```
+- [X] Debe contener al menos 3 elementos de tipo ```<input>``` o ```<select>``` ó ```<button>``` que le permitan al usuario ingresar valores para poder realizar un cálculo de un ejercicio.
 - [ ] Debe haber por lo menos una etiqueta ```<img>``` en la página.
 - [X] La estructura del proyecto debe ser adecuada (crear una carpeta para las imágenes, otra para los sketch/mockups). Es importante que contenga SKETCH y MOCKUP
 - [ ] Debe contener un ```<canvas>```, para que posteriormente (en la 2da etapa) se grafique alguna imagen representativa del ejercicio. (el desarrollo del gráfico se realizará cuando se vea la unidad de “Orientación a Eventos”)

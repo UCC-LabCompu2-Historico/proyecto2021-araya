@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulador de Guitarra</title>
+    <meta content="Agustina Araya" name="autor">
+    <meta content="Simulacion para el aprendizaje de acordes de guitarra" name="descripcion">
+    <meta content="Guitarra, Acordes, Cuerdas, Simulacion, Notas" name="palabras-principales">
+    <link rel="stylesheet" href="Estilo.css" type="text/css">
+</head>
+<body>
+<p>
+Nota Musical:
+<input type="text" name="notamusical">
+Opcional:
+<select name="op-acordes">
+    <option value="ninguna">Ninguna</option>
+    <option value="menor">Escala Menor</option>
+    <option value="septima">Acorde de Séptima</option>
+</select>
+<input type="checkbox" name="sostenido" value="sostenido"> Acorde sostenido<br>
+</p>
+<canvas id="graf_guitarra">
+    El navegador no soporta canvas
+</canvas>
+</body>
+</html>
