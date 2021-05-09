@@ -1,5 +1,6 @@
 # Simulador de Guitarra
 Esta página corresponde a una simulación para el aprendizaje de acordes de guitarra.
+Link al sitio: [Simulador de Guitarra](https://ucc-labcompu2.github.io/proyecto2021-araya/)
 
 ## Autores
 | Autor | Email |
