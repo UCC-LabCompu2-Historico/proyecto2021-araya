@@ -1,3 +1,17 @@
-h1, h2 {
+
+header.principal {
     color: #633727;
+    font-family: 'Neucha', cursive;
+    font-size: xxx-large;
+    font-weight: bolder;
+}
+header {
+    color: #633727;
+    font-family: 'Neucha', cursive;
+    font-size: large;
+    font-weight: bold;
+}
+div.texto{
+    font-family: 'Open Sans', sans-serif;
+
 }
