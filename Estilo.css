@@ -4,14 +4,21 @@ header.principal {
     font-family: 'Neucha', cursive;
     font-size: xxx-large;
     font-weight: bolder;
+    text-align: center;
 }
 header {
     color: #633727;
     font-family: 'Neucha', cursive;
-    font-size: large;
+    font-size: xx-large;
     font-weight: bold;
+    text-align: center;
 }
 div.texto{
     font-family: 'Open Sans', sans-serif;
 
+}
+#cifrado, #cuerdas{
+    border:solid #f1a519;
+    background: #f1a519;
+    font-size: xx-large;
 }
