@@ -7,11 +7,19 @@
         <meta content="Simulacion para el aprendizaje de acordes de guitarra" name="descripcion">
         <meta content="Guitarra, Acordes, Cuerdas, Simulacion, Notas" name="palabras-principales">
         <link rel="stylesheet" href="Estilo.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Open+Sans:wght@600&display=swap" rel="stylesheet">
     </head>
     <body>
-    <p>
+    <header><h1>SIMULADOR DE GUITARRA</h1></header>
+    <div>
+    <section>
+        <p>
     Nota Musical:
     <input type="text" name="notamusical">
+        </p>
+        <p>
+            <i>Ingrese una nota musical en cifrado americano o popular</i>
+        </p>
     Opcional:
     <select name="op-acordes">
         <option value="ninguna">Ninguna</option>
@@ -19,9 +27,10 @@
         <option value="septima">Acorde de Séptima</option>
     </select>
     <input type="checkbox" name="sostenido" value="sostenido"> Acorde sostenido<br>
-    </p>
+    </section>
     <canvas id="graf_guitarra">
         El navegador no soporta canvas.
     </canvas>
+    </div>
     </body>
     </html>
