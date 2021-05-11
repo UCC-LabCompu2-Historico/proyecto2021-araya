@@ -1,42 +1,46 @@
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>Simulador de Guitarra</title>
-        <meta content="Agustina Araya" name="autor">
-        <meta content="Simulacion para el aprendizaje de acordes de guitarra" name="descripcion">
-        <meta content="Guitarra, Acordes, Cuerdas, Simulacion, Notas" name="palabras-principales">
-        <link rel="stylesheet" href="Estilo.css" type="text/css">
-        <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Open+Sans:wght@600&display=swap" rel="stylesheet">
-    </head>
-    <body>
-    <header><h1>SIMULADOR DE GUITARRA</h1></header>
-    <div>
-    <section id="opciones">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulador de Guitarra</title>
+    <meta content="Agustina Araya" name="autor">
+    <meta content="Simulación para el aprendizaje de acordes de guitarra" name="descripción">
+    <meta content="Guitarra, Acordes, Cuerdas, Simulación, Notas" name="palabras-principales">
+    <link rel="stylesheet" href="Estilo.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Open+Sans:wght@600&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<header><h1>SIMULADOR DE GUITARRA</h1></header>
+<div>
+    <section id="formulario">
         <p>
-    Nota Musical:
-    <input type="text" name="notamusical">
+            <label for="notamusical">Nota Musical:</label>
+            <input type="text" name="notamusical" placeholder="Nota Musical" id="notamusical">
             <i id="instruccion">(Ingrese una nota musical en cifrado americano o popular)</i>
         </p>
         <p>
-    Opciones:
-    <select name="op-acordes">
-        <option value="ninguna">Ninguna</option>
-        <option value="menor">Escala Menor</option>
-        <option value="septima">Acorde de Séptima</option>
-    </select>
-    <input type="checkbox" name="sostenido" value="sostenido"> Acorde sostenido
+            <label for="opciones">Opciones:</label>
+            <select name="op-acordes" id="opciones">
+                <option value="ninguna">Ninguna</option>
+                <option value="menor">Escala Menor</option>
+                <option value="septima">Acorde de Séptima</option>
+            </select>
+            <label for="sostenido"></label>
+            <input type="checkbox" name="sostenido" value="sostenido" id="sostenido"> Acorde sostenido
         </p>
         <p>
             <button type="button" id="play_button">PLAY</button>
-    </section>
         </p>
+    </section>
+
     <canvas id="graf_guitarra">
         El navegador no soporta canvas.
+        <!--Imagen ejemplo-mastil.png a modo de ilustracion-->
     </canvas>
-    </div>
-    <nav class="footer">
-            <a href="index.html"><img src="Imagenes/home.png" id="home"></a>
-    </nav>
-    </body>
-    </html>
+</div>
+<nav class="footer">
+    <a href="index.html"><img src="Imagenes/home.png" id="home" alt="home"></a>
+</nav>
+</body>
+</html>
