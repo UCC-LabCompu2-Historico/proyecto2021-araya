@@ -1,23 +1,148 @@
 header.principal {
-    color: #633727;
+    color: #2d1b14;
     font-family: 'Neucha', cursive;
     font-size: xxx-large;
     font-weight: bolder;
     text-align: center;
+    text-shadow: 0 1px 0 #633727, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
+
+
 }
 header {
-    color: #633727;
+    color: #2d1b14;
     font-family: 'Neucha', cursive;
     font-size: xx-large;
     font-weight: bold;
     text-align: center;
+    text-shadow: 0 1px 0 #633727, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
+
 }
 div.texto{
     font-family: 'Open Sans', sans-serif;
 
 }
-#cifrado, #cuerdas{
+#button_cifrado, #button_cuerdas{
+    color:#633727;
+    font-family: 'Neucha', cursive;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px #ccc;
+    border:solid #f1a519;
+    background: #f1a519;
+    font-size: xxx-large;
+    box-shadow: 2px 4px 2px #633727;
+    width: 70%;
+    margin-top: 30px;
+    position:relative;
+    top:80%;
+    right:-15%;
+
+
+}
+#guitarra {
+    max-width:70%; height: auto;
+    filter: drop-shadow(15px 15px 8px #633727);
+    position: absolute;
+    left:-6%;
+    top:40%;
+
+}
+body{
+    background-image: url("Imagenes/hoja.png");
+    margin-bottom: 5%;
+}
+#button_intro{
+    color:#633727;
+    font-family: 'Neucha', cursive;
+    font-weight: bold;
+    font-size: xxx-large;
+    text-shadow: 2px 2px 2px #ccc;
+    border: transparent;
+    background: transparent;
+    position: absolute;
+    top:70%;
+    right:15%;
+}
+#button_simulador {
+    color:#633727;
+    font-family: 'Neucha', cursive;
+    font-weight: bold;
+    font-size: xxx-large;
+    text-shadow: 2px 2px 2px #ccc;
+    border: transparent;
+    background: transparent;
+    position: absolute;
+    top:100%;
+    right:40%;
+}
+#play{
+    max-width: 100px;
+    filter: drop-shadow(5px 5px 2px #633727);
+
+}
+#home{
+    max-width: 50px;
+    height: auto;
+    filter: drop-shadow(3px 3px #633727);
+    margin: 10px 10px 10px 10px;
+    position: absolute;
+    right:15px;
+    bottom:15px;
+}
+#back{
+    max-width: 50px;
+    height: auto;
+    filter: drop-shadow(3px 3px #633727);
+    margin: 10px 10px 10px 10px;
+    position: absolute;
+    right:80px;
+    bottom:15px;
+}
+#graf_guitarra {
+    width: 90%;
+    height: 30%;
+    border:2px solid #2d1b14;
+    background-image: url("Imagenes/ejemplo-mastil.png");
+    background-position: center;
+    background-size: cover;
+    background-color: #2d1b14;
+    position:absolute;
+    bottom:15%;
+    left:5%;
+}
+#opciones {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-size: 25px;
+    margin-top: -1%;
+}
+#instruccion {
+    font-size: 15px;
+}
+#Play{
+    color:white;
+    font-family: 'Neucha', cursive;
+    text-shadow: 1px 1px 1px #633727;
     border:solid #f1a519;
     background: #f1a519;
     font-size: xx-large;
+    margin-top: -5%;
+    box-shadow: 3px 3px 4px #633727;
+}
+#tabla, #tr, #td, #th{
+    border: 2px solid #633727;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: larger;
+}
+#th2 {
+    border-collapse: collapse;
+    text-align: center;
+    font-size: larger;
+}
+.tabla_cifrado {
+    font-family: 'Open Sans', sans-serif;
+    position: absolute;
+    top:40%;
+    left:32%;
+
 }
