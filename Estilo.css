@@ -140,7 +140,7 @@ body {
 
 #graf_guitarra {
     width: 90%;
-    height: 30%;
+    height: 28%;
     border: 2px solid #2d1b14;
     background-image: url("Imagenes/ejemplo-mastil.png"); /*Imagen utilizada con fin ilustrativo*/
     background-position: center;
@@ -148,7 +148,7 @@ body {
     background-color: #2d1b14;
     background-repeat: no-repeat;
     position: absolute;
-    bottom: 15%;
+    bottom: 13%;
     left: 5%;
 }
 
