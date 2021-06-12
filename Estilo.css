@@ -13,7 +13,7 @@
 header {
     color: #2d1b14;
     font-family: 'Neucha', cursive;
-    font-size: xx-large;
+    font-size: 35px;
     font-weight: bold;
     text-align: center;
     text-shadow: 0 1px 0 #633727, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
@@ -36,7 +36,7 @@ header {
     text-shadow: 2px 2px 2px #ccc;
     border: none;
     background: #f1a519;
-    font-size: xxx-large;
+    font-size: 60px;
     box-shadow: 0 9px #633727;
     width: 70%;
     margin-top: 30px;
@@ -174,7 +174,7 @@ body {
     text-shadow: 1px 1px 1px #633727;
     border: none;
     background: #f1a519;
-    font-size: xx-large;
+    font-size: 40px;
     margin-top: -5%;
     box-shadow: 0 7px #633727;
     cursor: pointer;
