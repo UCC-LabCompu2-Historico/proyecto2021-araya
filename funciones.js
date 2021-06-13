@@ -265,3 +265,7 @@ function Graficar () {
 function Reset(){
     location.reload();
 }
+
+function Armonia (){
+    new Audio("Sonidos/guitarrainicio.mp3").play();
+}
