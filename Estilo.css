@@ -185,7 +185,7 @@ body {
     border: 3px solid #633727;
     border-collapse: collapse;
     text-align: center;
-    font-size: larger;
+    font-size: 27px;
     font-family: 'Open Sans', sans-serif;
     padding: 10px;
 
@@ -261,4 +261,12 @@ body {
     background-image:url("Imagenes/madera2.jpg");
     width:100%;
     height:200px;
+}
+.notas {
+    position: absolute;
+    display: none;
+    font-family: 'Neucha', cursive;
+    margin-left: 5px;
+    margin-top: -4%;
+    font-size: 30px;
 }
