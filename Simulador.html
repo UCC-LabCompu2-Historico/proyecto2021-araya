@@ -18,12 +18,12 @@
     <section id="formulario">
         <p>
             <label for="notamusical">Nota Musical:</label>
-            <input type="text" name="notamusical" placeholder="Nota Musical" id="notamusical" oninput="this.value = this.value.toUpperCase()">
+            <input type="text" name="notamusical" placeholder="Nota Musical" id="notamusical" oninput="this.value = this.value.toUpperCase()" onchange="LeerNotayMostrar()">
             <i id="instruccion">(Ingrese una nota musical en cifrado americano o popular)</i>
         </p>
         <p>
             <label for="opciones">Opciones:</label>
-            <select name="op-acordes" id="opciones">
+            <select name="op-acordes" id="opciones" >
                 <option value="ninguna">Ninguna</option>
                 <option value="menor">Escala Menor</option>
                 <option value="septima">Acorde de Séptima</option>
@@ -32,7 +32,7 @@
             <input type="checkbox" name="sostenido" value="sostenido" id="sostenido"> Acorde sostenido
         </p>
         <p>
-            <button type="button" id="play_button" onclick="LeerNotayMostrar()">PLAY</button>
+            <button type="button" id="play_button" onclick="Graficar()">PLAY</button>
         </p>
     </section>
 

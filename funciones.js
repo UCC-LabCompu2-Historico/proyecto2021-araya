@@ -4,44 +4,16 @@
  * @return alert
  */
 function LeerNotayMostrar(){
-    var canvas = document.getElementById("graf_guitarra");
-    var ctx= canvas.getContext("2d");
     var nota= document.getElementById("notamusical").value;
-    var opcion= document.getElementById("opciones").value;
-    var sostenido= document.getElementById("opciones").value;
     if ((nota!="DO") && (nota!="RE") && (nota!="MI") && (nota!="FA") && (nota!="SOL") && (nota!="LA") && (nota!="SI") && (nota!="C") && (nota!="D") && (nota!="E") && (nota!="F") && (nota!="G") && (nota!="A") && (nota!="B")){
 
        alert ("♪ Valor incorrecto. Ingrese una nota musical. ♪");
     }
-    if ((nota=="DO" || nota=="C")){
-        if(opcion=="ninguna"){
-            if(sostenido){
-            ctx.fillStyle="#eee";
-            ctx.arc(15, 11, 3,0,2* Math.PI);
-            ctx.arc(15, 61, 3,0,2* Math.PI);
-            ctx.fill();
-            }
-            else{
-
-            }
-        }
-        if(opcion=="menor"){
-            if(sostenido){
-
-            }
-            else{
-
-            }
-        }
-        if(opcion=="septima"){
-            if(sostenido){
-
-            }
-            else{
-
-            }
-        }
-
+    if (nota=="MI" || nota=="E" || nota=="SI" || nota=="B"  ){
+        document.getElementById("sostenido").disabled=true;
+    }
+    else{
+        document.getElementById("sostenido").disabled=false;
     }
 }
 
@@ -74,8 +46,195 @@ function DibujarCanvas(){
     ctx.fillRect(0, 61, Xmax, 2);
     ctx.fillRect(0, 86, Xmax, 3);
     ctx.fillRect(0, 111, Xmax, 3);
-    ctx.fillRect(0, 136, Xmax, 3);
+    ctx.fillRect(0, 136, Xmax, 4);
     ctx.fillStyle= "#241d1a";
     ctx.fillRect(0, 0, 6, Ymax);
 }
+function Graficar (){
+    var canvas = document.getElementById("graf_guitarra");
+    var ctx= canvas.getContext("2d");
+    var nota= document.getElementById("notamusical").value;
+    var opcion= document.getElementById("opciones").value;
+    var sostenido= document.getElementById("opciones").value;
+    if ((nota=="DO" || nota=="C")){
+        if(opcion=="ninguna"){
+            if(sostenido){
+                new Audio("Sonidos/do sostenido.mp3").play();
+            }
+            else{
 
+            }
+        }
+        if(opcion=="menor"){
+            if(sostenido){
+
+            }
+            else{
+
+            }
+        }
+        if(opcion=="septima"){
+            if(sostenido){
+
+            }
+            else{
+
+            }
+        }
+
+    }
+    if ((nota=="RE" || nota=="D")){
+        if(opcion=="ninguna"){
+            if(sostenido){
+
+                new Audio("Sonidos/re sostenido.mp3").play();
+            }
+            else{
+
+            }
+        }
+        if(opcion=="menor"){
+            if(sostenido){
+
+            }
+            else{
+
+            }
+        }
+        if(opcion=="septima"){
+            if(sostenido){
+
+            }
+            else{
+
+            }
+        }
+
+    }
+    if ((nota=="MI" || nota=="E")){
+        if(opcion=="ninguna"){
+
+        }
+        if(opcion=="menor"){
+            if(sostenido){
+
+            }
+            else{
+
+            }
+        }
+        if(opcion=="septima"){
+            if(sostenido){
+
+            }
+            else{
+
+            }
+        }
+
+    }
+    if ((nota=="FA" || nota=="F")){
+        if(opcion=="ninguna"){
+            if(sostenido){
+                new Audio("Sonidos/fa sostenido.mp3").play();
+            }
+            else{
+
+            }
+        }
+        if(opcion=="menor"){
+            if(sostenido){
+
+            }
+            else{
+
+            }
+        }
+        if(opcion=="septima"){
+            if(sostenido){
+
+            }
+            else{
+
+            }
+        }
+
+    }
+    if ((nota=="SOL" || nota=="G")){
+        if(opcion=="ninguna"){
+            if(sostenido){
+                new Audio("Sonidos/sol sostenido.mp3").play();
+            }
+            else{
+
+            }
+        }
+        if(opcion=="menor"){
+            if(sostenido){
+
+            }
+            else{
+
+            }
+        }
+        if(opcion=="septima"){
+            if(sostenido){
+
+            }
+            else{
+
+            }
+        }
+
+    }
+    if ((nota=="LA" || nota=="A")){
+        if(opcion=="ninguna"){
+            if(sostenido){
+                new Audio("Sonidos/la sostenido.mp3").play();
+            }
+            else{
+
+            }
+        }
+        if(opcion=="menor"){
+            if(sostenido){
+
+            }
+            else{
+
+            }
+        }
+        if(opcion=="septima"){
+            if(sostenido){
+
+            }
+            else{
+
+            }
+        }
+
+    }
+    if ((nota=="SI" || nota=="B")){
+        if(opcion=="ninguna"){
+
+        }
+        if(opcion=="menor"){
+            if(sostenido){
+
+            }
+            else{
+
+            }
+        }
+        if(opcion=="septima"){
+            if(sostenido){
+
+            }
+            else{
+
+            }
+        }
+
+    }
+
+}
