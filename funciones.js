@@ -56,6 +56,9 @@ function Graficar () {
     var nota = document.getElementById("notamusical").value;
     var opcion = document.getElementById("opciones").value;
     var sostenido = document.getElementById("sostenido");
+    document.getElementById("notamusical").disabled=true;
+    document.getElementById("opciones").disabled=true;
+    document.getElementById("sostenido").disabled=true;
 
     if ((nota == "DO" || nota == "C")) {
         if (opcion == "ninguna") {
@@ -257,4 +260,8 @@ function Graficar () {
 
     }
 
+}
+
+function Reset(){
+    location.reload();
 }
