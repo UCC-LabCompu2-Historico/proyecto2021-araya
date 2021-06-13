@@ -71,17 +71,19 @@ function Graficar () {
         if (opcion == "menor") {
             if (sostenido.checked==false) {
                 document.getElementById("dom").style.display='block';
-                new Audio("Sonidos/doSm.mp3").play();
+                new Audio("Sonidos/dom.mp3").play();
             } else {
                 document.getElementById("doSm").style.display='block';
-                new Audio("Sonidos/dom.mp3").play();
+                new Audio("Sonidos/doSm.mp3").play();
             }
         }
         if (opcion == "septima") {
             if (sostenido.checked==true) {
                 document.getElementById("dostS").style.display='block';
+                new Audio("Sonidos/dostS.mp3").play();
             } else {
                 document.getElementById("dost").style.display='block';
+                new Audio("Sonidos/dost.mp3").play();
             }
         }
 
@@ -112,9 +114,11 @@ function Graficar () {
         if(opcion=="septima"){
             if(sostenido.checked==true){
                 document.getElementById("restS").style.display='block';
+                new Audio("Sonidos/restS.mp3").play();
             }
             else{
                 document.getElementById("rest").style.display='block';
+                new Audio("Sonidos/rest.mp3").play();
             }
         }
 
@@ -130,6 +134,7 @@ function Graficar () {
         }
         if(opcion=="septima"){
             document.getElementById("mist").style.display='block';
+            new Audio("Sonidos/mist.mp3").play();
         }
 
     }
@@ -159,9 +164,11 @@ function Graficar () {
         if(opcion=="septima"){
             if(sostenido.checked==true){
                 document.getElementById("fastS").style.display='block';
+                new Audio("Sonidos/fastS.mp3").play();
             }
             else{
                 document.getElementById("fast").style.display='block';
+                new Audio("Sonidos/fast.mp3").play();
             }
         }
 
@@ -191,9 +198,11 @@ function Graficar () {
         if(opcion=="septima"){
             if(sostenido.checked==true){
                 document.getElementById("solstS").style.display='block';
+                new Audio("Sonidos/solstS.mp3").play();
             }
             else{
                 document.getElementById("solst").style.display='block';
+                new Audio("Sonidos/solst.mp3").play();
             }
         }
 
@@ -222,9 +231,11 @@ function Graficar () {
         if(opcion=="septima"){
             if(sostenido.checked==true){
                 document.getElementById("lastS").style.display='block';
+                new Audio("Sonidos/lastS.mp3").play();
             }
             else{
                 document.getElementById("last").style.display='block';
+                new Audio("Sonidos/last.mp3").play();
             }
         }
 
@@ -240,6 +251,7 @@ function Graficar () {
         }
         if(opcion=="septima"){
             document.getElementById("sist").style.display='block';
+            new Audio("Sonidos/sist.mp3").play();
 
         }
 
