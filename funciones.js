@@ -1,9 +1,9 @@
 /**
- * Validacion de input para que se ingrese una nota musical valida.
- * @method LeerNota
+ * Validacion de input para que se ingrese una nota musical valida. Para notas MI y SI, deshabilita el checkbox de acorde sostenido ya que no existe.
+ * @method Validar
  * @return alert
  */
-function LeerNotayMostrar(){
+function Validar(){
     var nota= document.getElementById("notamusical").value;
     if ((nota!="DO") && (nota!="RE") && (nota!="MI") && (nota!="FA") && (nota!="SOL") && (nota!="LA") && (nota!="SI") && (nota!="C") && (nota!="D") && (nota!="E") && (nota!="F") && (nota!="G") && (nota!="A") && (nota!="B")){
 
@@ -16,7 +16,10 @@ function LeerNotayMostrar(){
         document.getElementById("sostenido").disabled=false;
     }
 }
-
+/** Dibuja el mastil de la guitarra con 6 cuerdas, 10 trastes y cejuela
+* @method DiubjarCanvas
+* @return ctx
+*/
 function DibujarCanvas(){
     var canvas = document.getElementById("graf_guitarra");
     var ctx= canvas.getContext("2d");
@@ -51,6 +54,10 @@ function DibujarCanvas(){
     ctx.fillStyle= "#241d1a";
     ctx.fillRect(0, 0, 26, Ymax);
 }
+/** Grafica las notas y reproduce el sonido de cada acorde en base a los datos ingresados
+* @method Graficar
+* @return ctx
+*/
 function Graficar () {
     var canvas = document.getElementById("graf_guitarra");
     var ctx = canvas.getContext("2d");
@@ -63,7 +70,11 @@ function Graficar () {
     var Xmax= canvas.width;
     var Ymax= canvas.height;
     var medio=54;
-    ctx.fillStyle="#ffd75e";
+    ctx.fillStyle="#f1a519";
+    if(nota==""){
+        alert("Ingrese una nota musical ♪");
+        location.reload();
+    }
     if ((nota == "DO" || nota == "C")) {
         if (opcion == "ninguna") {
             if (sostenido.checked==false) {
@@ -958,11 +969,11 @@ function Graficar () {
     }
 
 }
-
+/**
+ * Carga nuevamente la pagina para permitir ingresar datos nuevos
+ * @method Reset
+ */
 function Reset(){
     location.reload();
 }
 
-function Armonia (){
-    new Audio("Sonidos/guitarrainicio.mp3").play();
-}

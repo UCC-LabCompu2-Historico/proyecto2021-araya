@@ -18,7 +18,7 @@
     <section id="formulario">
         <p>
             <label for="notamusical">Nota Musical:</label>
-            <input type="text" name="notamusical" placeholder="Nota Musical" id="notamusical" oninput="this.value = this.value.toUpperCase()" onchange="LeerNotayMostrar()">
+            <input type="text" name="notamusical" placeholder="Nota Musical" id="notamusical" oninput="this.value = this.value.toUpperCase()" onchange="Validar()">
             <i id="instruccion">(Ingrese una nota musical en cifrado americano o popular)</i>
         </p>
         <p>
@@ -35,7 +35,6 @@
             <button type="button" id="play_button" onclick="Graficar()">PLAY</button>
             <button type="button" id="reset_button" onclick="Reset()">⭯</button>
         </p>
-        <p>
             <div id="doS" class="notas"> DO#</div>
             <div id="reS" class="notas"> RE#</div>
             <div id="faS" class="notas"> FA#</div>
@@ -73,7 +72,6 @@
             <div id="solstS" class="notas"> SOL7#</div>
             <div id="lastS" class="notas"> LA7#</div>
 
-        </p>
     </section>
 
     <canvas id="graf_guitarra" width="1200px" height="200px">
@@ -81,7 +79,7 @@
     </canvas>
 </div>
 <nav class="footer">
-    <a href="index.html"><img src="Imagenes/home.png" id="home2" alt="home"></a>
+    <a href="index.html" ><img src="Imagenes/home.png" id="home2" alt="home"></a>
 </nav>
 <footer class="foot">Creado por aaraya0 - Laboratorio de Computación II 2021</footer>
 </body>
