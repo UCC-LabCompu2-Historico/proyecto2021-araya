@@ -8,6 +8,7 @@
         if ((nota!="DO") && (nota!="RE") && (nota!="MI") && (nota!="FA") && (nota!="SOL") && (nota!="LA") && (nota!="SI") && (nota!="C") && (nota!="D") && (nota!="E") && (nota!="F") && (nota!="G") && (nota!="A") && (nota!="B")){
 
            alert ("♪ Valor incorrecto. Ingrese una nota musical. ♪");
+           location.reload();
         }
         if (nota=="MI" || nota=="E" || nota=="SI" || nota=="B"  ){
             document.getElementById("sostenido").disabled=true;
@@ -67,14 +68,17 @@
         document.getElementById("notamusical").disabled=true;
         document.getElementById("opciones").disabled=true;
         document.getElementById("sostenido").disabled=true;
+
         var Xmax= canvas.width;
         var Ymax= canvas.height;
         var medio=54;
         ctx.fillStyle="#f1a519";
+
         if(nota==""){
             alert("Ingrese una nota musical ♪");
             location.reload();
         }
+
         if ((nota == "DO" || nota == "C")) {
             if (opcion == "ninguna") {
                 if (sostenido.checked==false) {
