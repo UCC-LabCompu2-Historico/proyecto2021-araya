@@ -23,32 +23,33 @@ function DibujarCanvas(){
     var Xmax= canvas.width;
     var Ymax= canvas.height;
     ctx.fillStyle= "#574329";
-    ctx.fillRect(30, 0, 3, Ymax);
-    ctx.fillRect(60, 0, 3, Ymax);
-    ctx.fillRect(90, 0, 3, Ymax);
-    ctx.fillRect(120, 0, 3, Ymax);
-    ctx.fillRect(150, 0, 3, Ymax);
-    ctx.fillRect(180, 0, 3, Ymax);
-    ctx.fillRect(210, 0, 3, Ymax);
-    ctx.fillRect(240, 0, 3, Ymax);
-    ctx.fillRect(270, 0, 3, Ymax);
+    ctx.fillRect(134, 0, 4, Ymax);
+    ctx.fillRect(242, 0, 4, Ymax);
+    ctx.fillRect(350, 0, 4, Ymax);
+    ctx.fillRect(458, 0, 4, Ymax);
+    ctx.fillRect(566, 0, 4, Ymax);
+    ctx.fillRect(672, 0, 4, Ymax);
+    ctx.fillRect(780, 0, 4, Ymax);
+    ctx.fillRect(888, 0, 4, Ymax);
+    ctx.fillRect(996, 0, 4, Ymax);
+    ctx.fillRect(1104, 0, 4, Ymax);
 
     ctx.fillStyle="#b1956e";
-    ctx.arc(75, Ymax/2, 2, 0, 2 * Math.PI);
-    ctx.arc(135, Ymax/2, 2, 0, 2 * Math.PI);
-    ctx.arc(195, Ymax/2, 2, 0, 2 * Math.PI);
-    ctx.arc(255, Ymax/2, 2, 0, 2 * Math.PI);
+    ctx.arc(296, Ymax/2, 7, 0, 2 * Math.PI);
+    ctx.arc(512, Ymax/2, 7, 0, 2 * Math.PI);
+    ctx.arc(726, Ymax/2, 7, 0, 2 * Math.PI);
+    ctx.arc(942, Ymax/2, 7, 0, 2 * Math.PI);
     ctx.fill();
 
     ctx.fillStyle= "#c6a000";
-    ctx.fillRect(0, 11, Xmax, 2);
-    ctx.fillRect(0, 36, Xmax, 2);
-    ctx.fillRect(0, 61, Xmax, 2);
-    ctx.fillRect(0, 86, Xmax, 3);
-    ctx.fillRect(0, 111, Xmax, 3);
-    ctx.fillRect(0, 136, Xmax, 4);
+    ctx.fillRect(0, 26, Xmax, 2);
+    ctx.fillRect(0, 56, Xmax, 2);
+    ctx.fillRect(0, 86, Xmax, 2);
+    ctx.fillRect(0, 116, Xmax, 3);
+    ctx.fillRect(0, 146, Xmax, 3);
+    ctx.fillRect(0, 176, Xmax, 4);
     ctx.fillStyle= "#241d1a";
-    ctx.fillRect(0, 0, 6, Ymax);
+    ctx.fillRect(0, 0, 26, Ymax);
 }
 function Graficar () {
     var canvas = document.getElementById("graf_guitarra");
@@ -59,10 +60,27 @@ function Graficar () {
     document.getElementById("notamusical").disabled=true;
     document.getElementById("opciones").disabled=true;
     document.getElementById("sostenido").disabled=true;
-
+    var Xmax= canvas.width;
+    var Ymax= canvas.height;
+    var medio=54;
+    ctx.fillStyle="#ffd75e";
     if ((nota == "DO" || nota == "C")) {
         if (opcion == "ninguna") {
             if (sostenido.checked==false) {
+
+                ctx.beginPath();
+                ctx.arc(134-medio, 56, 12, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.closePath();
+                ctx.beginPath();
+                ctx.arc(242-medio, 116, 12, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.closePath();
+                ctx.beginPath();
+                ctx.arc(350-medio, 146, 12, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.closePath();
+
                 new Audio("Sonidos/do.mp3").play();
                 document.getElementById("do").style.display='block';
             }
