@@ -45,13 +45,16 @@
         ctx.arc(942, Ymax/2, 7, 0, 2 * Math.PI);
         ctx.fill();
 
-        ctx.fillStyle= "#c6a000";
-        ctx.fillRect(0, 26, Xmax, 2);
-        ctx.fillRect(0, 56, Xmax, 2);
-        ctx.fillRect(0, 86, Xmax, 2);
-        ctx.fillRect(0, 116, Xmax, 3);
-        ctx.fillRect(0, 146, Xmax, 3);
-        ctx.fillRect(0, 176, Xmax, 4);
+        for (var i=26; i<Ymax;){
+            ctx.beginPath();
+            ctx.moveTo( 0, i);
+            ctx.lineTo (Xmax, i);
+            ctx.lineWidth=3;
+            ctx.strokeStyle="#c6a000";
+            ctx.stroke();
+            ctx.closePath();
+            i=i+30;
+        }
         ctx.fillStyle= "#241d1a";
         ctx.fillRect(0, 0, 26, Ymax);
     }
@@ -981,3 +984,8 @@
         location.reload();
     }
 
+function Rasgueo (){
+    var canvas = document.getElementById("graf_guitarra2");
+    var ctx = canvas.getContext('2d');
+
+}
