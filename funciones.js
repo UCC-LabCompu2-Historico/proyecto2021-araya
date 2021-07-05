@@ -62,6 +62,7 @@
     * @method Graficar
     * @return ctx
     */
+
     function Graficar () {
         var canvas = document.getElementById("graf_guitarra");
         var ctx = canvas.getContext("2d");
@@ -71,11 +72,11 @@
         document.getElementById("notamusical").disabled=true;
         document.getElementById("opciones").disabled=true;
         document.getElementById("sostenido").disabled=true;
-
         var Xmax= canvas.width;
         var Ymax= canvas.height;
         var medio=54;
         ctx.fillStyle="#f1a519";
+        onload=setInterval(Pua,5);
 
         if(nota==""){
             alert("Ingrese una nota musical ♪");
@@ -983,9 +984,20 @@
     function Reset(){
         location.reload();
     }
+y=200;
+function Pua (){
+    var canvas = document.getElementById("graf_guitarra");
+    var ctx = canvas.getContext("2d");
+    var nota = document.getElementById("notamusical").value;
+    var img= new Image ();
+    img.src="Imagenes/guitar-pick.png";
+    if(nota!=""){
+        img.onload = function()
+        {
+            ctx.drawImage(img, 900, y, img.width / 5, img.height / 5);
+        }
+        y=y-8;
+    }
+    }
 
-function Rasgueo (){
-    var canvas = document.getElementById("graf_guitarra2");
-    var ctx = canvas.getContext('2d');
 
-}
