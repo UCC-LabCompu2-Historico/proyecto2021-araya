@@ -26,32 +26,28 @@
         var ctx= canvas.getContext("2d");
         var Xmax= canvas.width;
         var Ymax= canvas.height;
-        ctx.fillStyle= "#574329";
-        ctx.fillRect(134, 0, 4, Ymax);
-        ctx.fillRect(242, 0, 4, Ymax);
-        ctx.fillRect(350, 0, 4, Ymax);
-        ctx.fillRect(458, 0, 4, Ymax);
-        ctx.fillRect(566, 0, 4, Ymax);
-        ctx.fillRect(672, 0, 4, Ymax);
-        ctx.fillRect(780, 0, 4, Ymax);
-        ctx.fillRect(888, 0, 4, Ymax);
-        ctx.fillRect(996, 0, 4, Ymax);
-        ctx.fillRect(1104, 0, 4, Ymax);
-
+        ctx.fillStyle = "#574329";
+        for (var i=134; i<=1212;) {
+            ctx.fillRect(i, 0, 4, Ymax);
+            i=i+108;
+        }
         ctx.fillStyle="#b1956e";
-        ctx.arc(296, Ymax/2, 7, 0, 2 * Math.PI);
-        ctx.arc(512, Ymax/2, 7, 0, 2 * Math.PI);
-        ctx.arc(726, Ymax/2, 7, 0, 2 * Math.PI);
-        ctx.arc(942, Ymax/2, 7, 0, 2 * Math.PI);
-        ctx.fill();
+        for (var i=296; i<=1158;) {
+            ctx.arc(i, Ymax / 2, 7, 0, 2 * Math.PI);
+            ctx.fill();
+            i=i+216;
+        }
 
-        ctx.fillStyle= "#c6a000";
-        ctx.fillRect(0, 26, Xmax, 2);
-        ctx.fillRect(0, 56, Xmax, 2);
-        ctx.fillRect(0, 86, Xmax, 2);
-        ctx.fillRect(0, 116, Xmax, 3);
-        ctx.fillRect(0, 146, Xmax, 3);
-        ctx.fillRect(0, 176, Xmax, 4);
+        for (var i=26; i<Ymax;){
+            ctx.beginPath();
+            ctx.moveTo( 0, i);
+            ctx.lineTo (Xmax, i);
+            ctx.lineWidth=3;
+            ctx.strokeStyle="#c6a000";
+            ctx.stroke();
+            ctx.closePath();
+            i=i+30;
+        }
         ctx.fillStyle= "#241d1a";
         ctx.fillRect(0, 0, 26, Ymax);
     }
@@ -59,6 +55,7 @@
     * @method Graficar
     * @return ctx
     */
+
     function Graficar () {
         var canvas = document.getElementById("graf_guitarra");
         var ctx = canvas.getContext("2d");
@@ -68,11 +65,11 @@
         document.getElementById("notamusical").disabled=true;
         document.getElementById("opciones").disabled=true;
         document.getElementById("sostenido").disabled=true;
-
         var Xmax= canvas.width;
         var Ymax= canvas.height;
         var medio=54;
         ctx.fillStyle="#f1a519";
+        onload=setInterval(Pua,5);
 
         if(nota==""){
             alert("Ingrese una nota musical ♪");
@@ -980,4 +977,20 @@
     function Reset(){
         location.reload();
     }
+y=200;
+function Pua (){
+    var canvas = document.getElementById("graf_guitarra");
+    var ctx = canvas.getContext("2d");
+    var nota = document.getElementById("notamusical").value;
+    var img= new Image ();
+    img.src="Imagenes/guitar-pick.png";
+    if(nota!=""){
+        img.onload = function()
+        {
+            ctx.drawImage(img, 900, y, img.width / 5, img.height / 5);
+        }
+        y=y-8;
+    }
+    }
+
 
