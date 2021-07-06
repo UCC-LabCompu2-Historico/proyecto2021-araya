@@ -17,6 +17,13 @@
             document.getElementById("sostenido").disabled=false;
         }
     }
+    /**
+    * Dibuja circulos con los datos que le aporta la funcion Graficar
+    * @method draw
+    * @param x
+    * @param y
+    * @return ctx
+    */
     function draw(x,y){
         var canvas = document.getElementById("graf_guitarra");
         var ctx= canvas.getContext("2d");
@@ -472,6 +479,11 @@
         location.reload();
     }
 y=200;
+    /**
+    * Dibuja y anima la imagen de una pua que simula un rasgueo en la guitarra
+    * @method Pua
+    * @return ctx
+    */
 function Pua (){
     var canvas = document.getElementById("graf_guitarra");
     var ctx = canvas.getContext("2d");
