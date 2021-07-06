@@ -17,6 +17,15 @@
             document.getElementById("sostenido").disabled=false;
         }
     }
+    function draw(x,y){
+        var canvas = document.getElementById("graf_guitarra");
+        var ctx= canvas.getContext("2d");
+        ctx.fillStyle="#f1a519";
+        ctx.beginPath();
+        ctx.arc(x, y, 12, 0,2*Math.PI);
+        ctx.fill();
+        ctx.closePath();
+    }
     /** Dibuja el mastil de la guitarra con 6 cuerdas, 10 trastes y cejuela
     * @method DiubjarCanvas
     * @return ctx
@@ -68,7 +77,7 @@
         var Xmax= canvas.width;
         var Ymax= canvas.height;
         var medio=54;
-        ctx.fillStyle="#f1a519";
+
         onload=setInterval(Pua,5);
 
         if(nota==""){
@@ -76,152 +85,66 @@
             location.reload();
         }
 
+
         if ((nota == "DO" || nota == "C")) {
             if (opcion == "ninguna") {
                 if (sostenido.checked==false) {
-
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-
+                    draw(134-medio, 56);
+                    draw(242-medio, 116);
+                    draw(350-medio, 146);
                     new Audio("Sonidos/do.mp3").play();
                     document.getElementById("do").style.display='block';
                 }
                 else  {
                     new Audio("Sonidos/do sostenido.mp3").play();
                     document.getElementById("doS").style.display='block';
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
+                    draw(134-medio, 26);
+                    draw(134-medio, 86);
+                    draw(134-medio, 176);
+                    draw(242-medio, 56);
+                    draw(350-medio, 116);
+                    draw(458-medio, 146);
                 }
             }
             if (opcion == "menor") {
                 if (sostenido.checked==false) {
                     document.getElementById("dom").style.display='block';
                     new Audio("Sonidos/dom.mp3").play();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.beginPath();
-                    ctx.arc(566-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(566-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
+                    draw(350-medio, 26);
+                    draw(350-medio, 146);
+                    draw(350-medio, 176);
+                    draw(458-medio, 56);
+                    draw(566-medio, 86);
+                    draw(566-medio, 116);
                 } else {
                     document.getElementById("doSm").style.display='block';
                     new Audio("Sonidos/doSm.mp3").play();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(566-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.beginPath();
-                    ctx.arc(672-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(672-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
+                    draw(458-medio, 26);
+                    draw(458-medio, 146);
+                    draw(458-medio, 176);
+                    draw(566-medio, 56);
+                    draw(672-medio, 86);
+                    draw(672-medio, 116);
                 }
             }
             if (opcion == "septima") {
                 if (sostenido.checked==true) {
                     document.getElementById("dostS").style.display='block';
                     new Audio("Sonidos/dostS.mp3").play();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.beginPath();
-                    ctx.arc(672-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(672-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
+                    draw(458-medio, 26);
+                    draw(458-medio, 86);
+                    draw(458-medio, 176);
+                    draw(458-medio, 146);
+                    draw(672-medio, 56);
+                    draw(672-medio, 116);
                 } else {
                     document.getElementById("dost").style.display='block';
                     new Audio("Sonidos/dost.mp3").play();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(566-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.beginPath();
-                    ctx.arc(566-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
+                    draw(350-medio, 26);
+                    draw(350-medio, 86);
+                    draw(350-medio, 146);
+                    draw(566-medio, 56);
+                    draw(566-medio, 116);
                 }
             }
 
@@ -233,132 +156,58 @@
 
                     new Audio("Sonidos/re sostenido.mp3").play();
                     document.getElementById("reS").style.display='block';
-                    ctx.beginPath();
-                    ctx.arc(672-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(672-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.beginPath();
-                    ctx.arc(672-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(888-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.beginPath();
-                    ctx.arc(888-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(888-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
+                    draw(672-medio, 26);
+                    draw(672-medio, 146);
+                    draw(672-medio, 176);
+                    draw(888-medio, 56);
+                    draw(888-medio, 86);
+                    draw(888-medio, 116);
                 }
                 else{
                     new Audio("Sonidos/re.mp3").play();
                     document.getElementById("re").style.display='block';
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
+                    draw(242-medio, 26);
+                    draw(242-medio, 86);
+                    draw(458-medio, 146);
+                    draw(350-medio, 56);
                 }
             }
             if(opcion=="menor"){
                 if(sostenido.checked==true){
                     document.getElementById("reSm").style.display='block';
                     new Audio("Sonidos/reSm.mp3").play();
-                    ctx.beginPath();
-                    ctx.arc(672-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(672-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.beginPath();
-                    ctx.arc(672-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(780-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.beginPath();
-                    ctx.arc(888-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(888-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-
+                    draw(672-medio, 26);
+                    draw(672-medio, 146);
+                    draw(672-medio, 176);
+                    draw(780-medio, 56);
+                    draw(888-medio, 86);
+                    draw(888-medio, 116);
                 }
                 else{
                     document.getElementById("rem").style.display='block';
                     new Audio("Sonidos/rem.mp3").play();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-
+                    draw(134-medio, 26);
+                    draw(242-medio, 86);
+                    draw(350-medio, 56);
                 }
             }
             if(opcion=="septima"){
                 if(sostenido.checked==true){
                     document.getElementById("restS").style.display='block';
                     new Audio("Sonidos/restS.mp3").play();
-                    ctx.beginPath();
-                    ctx.arc(672-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(672-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.beginPath();
-                    ctx.arc(672-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(888-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.beginPath();
-                    ctx.arc(672-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(888-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-
+                    draw(672-medio, 26);
+                    draw(672-medio, 146);
+                    draw(672-medio, 176);
+                    draw(888-medio, 56);
+                    draw(672-medio, 86);
+                    draw(888-medio, 116);
                 }
                 else{
                     document.getElementById("rest").style.display='block';
                     new Audio("Sonidos/rest.mp3").play();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
+                    draw(134-medio, 56);
+                    draw(242-medio, 26);
+                    draw(242-medio, 86);
                 }
             }
 
@@ -367,41 +216,21 @@
             if(opcion=="ninguna"){
                 document.getElementById("mi").style.display='block';
                 new Audio("Sonidos/mi.mp3").play();
-                ctx.beginPath();
-                ctx.arc(134-medio, 86, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.beginPath();
-                ctx.arc(242-medio, 116, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
-                ctx.beginPath();
-                ctx.arc(242-medio, 146, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
+                draw(134-medio, 86);
+                draw(242-medio, 116);
+                draw(242-medio, 146);
             }
             if(opcion=="menor"){
                 document.getElementById("mim").style.display='block';
                 new Audio("Sonidos/mim.mp3").play();
-                ctx.beginPath();
-                ctx.arc(242-medio, 116, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
-                ctx.beginPath();
-                ctx.arc(242-medio, 146, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
+                draw(242-medio, 116);
+                draw(242-medio, 146);
             }
             if(opcion=="septima"){
                 document.getElementById("mist").style.display='block';
                 new Audio("Sonidos/mist.mp3").play();
-                ctx.beginPath();
-                ctx.arc(134-medio, 86, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
-                ctx.beginPath();
-                ctx.arc(242-medio, 146, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
+                draw(134-medio, 86);
+                draw(242-medio, 146);
             }
 
         }
@@ -410,58 +239,23 @@
                 if(sostenido.checked==true){
                     new Audio("Sonidos/fa sostenido.mp3").play();
                     document.getElementById("faS").style.display='block';
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
+                    draw(242-medio, 26);
+                    draw(242-medio, 56);
+                    draw(242-medio, 176);
+                    draw(350-medio, 86);
+                    draw(458-medio, 116);
+                    draw(458-medio, 146);
                 }
                 else{
                     new Audio("Sonidos/fa.mp3").play();
                     document.getElementById("fa").style.display='block';
                     ctx.beginPath();
-                    ctx.arc(134-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
+                    draw(134-medio, 26);
+                    draw(134-medio, 56);
+                    draw(134-medio, 176);
+                    draw(242-medio, 86);
+                    draw(350-medio, 116);
+                    draw(350-medio, 146);
                 }
 
                 }
@@ -470,118 +264,45 @@
                 if(sostenido.checked==true){
                     document.getElementById("faSm").style.display='block';
                     new Audio("Sonidos/faSm.mp3").play();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-
+                    draw(242-medio, 26);
+                    draw(242-medio, 56);
+                    draw(242-medio, 176);
+                    draw(242-medio, 86);
+                    draw(458-medio, 116);
+                    draw(458-medio, 146);
                 }
                 else{
                     document.getElementById("fam").style.display='block';
                     new Audio("Sonidos/fam.mp3").play();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
+                    draw(134-medio, 26);
+                    draw(134-medio, 56);
+                    draw(134-medio, 176);
+                    draw(134-medio, 86);
+                    draw(350-medio, 116);
+                    draw(350-medio, 146);
                 }
             }
             if(opcion=="septima"){
                 if(sostenido.checked==true){
                     document.getElementById("fastS").style.display='block';
                     new Audio("Sonidos/fastS.mp3").play();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(566-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-
+                    draw(242-medio, 26);
+                    draw(566-medio, 56);
+                    draw(242-medio, 176);
+                    draw(350-medio, 86);
+                    draw(242-medio, 116);
+                    draw(458-medio, 146);
                 }
                 else{
                     document.getElementById("fast").style.display='block';
                     new Audio("Sonidos/fast.mp3").play();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
+                    draw(134-medio, 26);
+                    draw(134-medio, 56);
+                    draw(134-medio, 176);
+                    draw(242-medio, 86);
+                    draw(458-medio, 146);
+                    draw(134-medio, 116);
+                    draw(350-medio, 146);
                 }
             }
 
@@ -591,153 +312,60 @@
                 if(sostenido.checked==true){
                     new Audio("Sonidos/sol sostenido.mp3").play();
                     document.getElementById("solS").style.display='block';
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(566-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(672-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(672-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-
+                    draw(458-medio, 26);
+                    draw(458-medio, 56);
+                    draw(458-medio, 176);
+                    draw(566-medio, 86);
+                    draw(672-medio, 116);
+                    draw(672-medio, 146);
                 }
                 else{
                     new Audio("Sonidos/sol.mp3").play();
                     document.getElementById("sol").style.display='block';
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-
+                    draw(350-medio, 26);
+                    draw(242-medio, 146);
+                    draw(350-medio, 176);
                 }
             }
             if(opcion=="menor"){
                 if(sostenido.checked==true){
                     document.getElementById("solSm").style.display='block';
                     new Audio("Sonidos/solSm.mp3").play();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(672-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(672-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
+                    draw(458-medio, 26);
+                    draw(458-medio, 56);
+                    draw(458-medio, 176);
+                    draw(458-medio, 86);
+                    draw(672-medio, 116);
+                    draw(672-medio, 146);
                 }
                 else{
                     document.getElementById("solm").style.display='block';
                     new Audio("Sonidos/solm.mp3").play();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(566-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(566-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
+                    draw(350-medio, 26);
+                    draw(350-medio, 56);
+                    draw(350-medio, 176);
+                    draw(350-medio, 86);
+                    draw(566-medio, 116);
+                    draw(566-medio, 146);
                 }
             }
             if(opcion=="septima"){
                 if(sostenido.checked==true){
                     document.getElementById("solstS").style.display='block';
                     new Audio("Sonidos/solstS.mp3").play();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(780-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(566-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(458-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(672-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
+                    draw(458-medio, 26);
+                    draw(780-medio, 56);
+                    draw(458-medio, 176);
+                    draw(566-medio, 86);
+                    draw(458-medio, 116);
+                    draw(672-medio, 146);
                 }
                 else{
                     document.getElementById("solst").style.display='block';
                     new Audio("Sonidos/solst.mp3").play();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-
+                    draw(134-medio, 26);
+                    draw(242-medio, 146);
+                    draw(350-medio, 176);
                 }
             }
 
@@ -747,135 +375,56 @@
                 if(sostenido.checked==true){
                     new Audio("Sonidos/la sostenido.mp3").play();
                     document.getElementById("laS").style.display='block';
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
+                    draw(134-medio, 26);
+                    draw(350-medio, 86);
+                    draw(134-medio, 176);
+                    draw(350-medio, 56);
+                    draw(350-medio, 116);
+                    draw(134-medio, 146);
                 }
                 else{
                     new Audio("Sonidos/la.mp3").play();
                     document.getElementById("la").style.display='block';
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
+                    draw(242-medio, 56);
+                    draw(242-medio, 86);
+                    draw(242-medio, 116);
                 }
             }
             if(opcion=="menor"){
                 if(sostenido.checked==true){
                     document.getElementById("laSm").style.display='block';
                     new Audio("Sonidos/laSm.mp3").play();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
+                    draw(134-medio, 26);
+                    draw(350-medio, 86);
+                    draw(134-medio, 176);
+                    draw(242-medio, 56);
+                    draw(350-medio, 116);
+                    draw(134-medio, 146);
                 }
                 else{
                     document.getElementById("lam").style.display='block';
                     new Audio("Sonidos/lam.mp3").play();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-
+                    draw(134-medio, 56);
+                    draw(242-medio, 86);
+                    draw(242-medio, 116);
                 }
             }
             if(opcion=="septima"){
                 if(sostenido.checked==true){
                     document.getElementById("lastS").style.display='block';
                     new Audio("Sonidos/lastS.mp3").play();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 26, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 86, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 176, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(350-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(134-medio, 146, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
+                    draw(134-medio, 26);
+                    draw(134-medio, 86);
+                    draw(134-medio, 176);
+                    draw(350-medio, 56);
+                    draw(350-medio, 116);
+                    draw(134-medio, 146);
                 }
                 else{
                     document.getElementById("last").style.display='block';
                     new Audio("Sonidos/last.mp3").play();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 56, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.beginPath();
-                    ctx.arc(242-medio, 116, 12, 0, 2 * Math.PI);
-                    ctx.fill();
-                    ctx.closePath();
+                    draw(242-medio, 56);
+                    draw(242-medio, 116);
                 }
             }
 
@@ -884,87 +433,32 @@
             if(opcion=="ninguna"){
                 new Audio("Sonidos/si.mp3").play();
                 document.getElementById("si").style.display='block';
-                ctx.beginPath();
-                ctx.arc(242-medio, 26, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
-                ctx.beginPath();
-                ctx.arc(458-medio, 86, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
-                ctx.beginPath();
-                ctx.arc(242-medio, 176, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
-                ctx.beginPath();
-                ctx.arc(458-medio, 56, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
-                ctx.beginPath();
-                ctx.arc(458-medio, 116, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
-                ctx.beginPath();
-                ctx.arc(242-medio, 146, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
+                draw(242-medio, 26);
+                draw(458-medio, 86);
+                draw(242-medio, 176);
+                draw(458-medio, 56);
+                draw(458-medio, 116);
+                draw(242-medio, 146);
             }
             if(opcion=="menor"){
                 document.getElementById("sim").style.display='block';
                 new Audio("Sonidos/sim.mp3").play();
-                ctx.beginPath();
-                ctx.arc(242-medio, 26, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
-                ctx.beginPath();
-                ctx.arc(458-medio, 86, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
-                ctx.beginPath();
-                ctx.arc(242-medio, 176, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
-                ctx.beginPath();
-                ctx.arc(350-medio, 56, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
-                ctx.beginPath();
-                ctx.arc(458-medio, 116, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
-                ctx.beginPath();
-                ctx.arc(242-medio, 146, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
+                draw(242-medio, 26);
+                draw(458-medio, 86);
+                draw(242-medio, 176);
+                draw(350-medio, 56);
+                draw(458-medio, 116);
+                draw(242-medio, 146);
             }
             if(opcion=="septima"){
                 document.getElementById("sist").style.display='block';
                 new Audio("Sonidos/sist.mp3").play();
-                ctx.beginPath();
-                ctx.arc(780-medio, 26, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
-                ctx.beginPath();
-                ctx.arc(888-medio, 86, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
-                ctx.beginPath();
-                ctx.arc(780-medio, 176, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
-                ctx.beginPath();
-                ctx.arc(780-medio, 56, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
-                ctx.beginPath();
-                ctx.arc(780-medio, 116, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
-                ctx.beginPath();
-                ctx.arc(996-medio, 146, 12, 0, 2 * Math.PI);
-                ctx.fill();
-                ctx.closePath();
-
+                draw(780-medio, 26);
+                draw(888-medio, 86);
+                draw(780-medio, 176);
+                draw(780-medio, 56);
+                draw(780-medio, 116);
+                draw(996-medio, 146);
             }
 
         }
@@ -987,7 +481,7 @@ function Pua (){
     if(nota!=""){
         img.onload = function()
         {
-            ctx.drawImage(img, 900, y, img.width / 5, img.height / 5);
+            ctx.drawImage(img, 1000, y, img.width / 5, img.height / 5);
         }
         y=y-8;
     }
