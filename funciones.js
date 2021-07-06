@@ -26,24 +26,17 @@
         var ctx= canvas.getContext("2d");
         var Xmax= canvas.width;
         var Ymax= canvas.height;
-        ctx.fillStyle= "#574329";
-        ctx.fillRect(134, 0, 4, Ymax);
-        ctx.fillRect(242, 0, 4, Ymax);
-        ctx.fillRect(350, 0, 4, Ymax);
-        ctx.fillRect(458, 0, 4, Ymax);
-        ctx.fillRect(566, 0, 4, Ymax);
-        ctx.fillRect(672, 0, 4, Ymax);
-        ctx.fillRect(780, 0, 4, Ymax);
-        ctx.fillRect(888, 0, 4, Ymax);
-        ctx.fillRect(996, 0, 4, Ymax);
-        ctx.fillRect(1104, 0, 4, Ymax);
-
+        ctx.fillStyle = "#574329";
+        for (var i=134; i<=1212;) {
+            ctx.fillRect(i, 0, 4, Ymax);
+            i=i+108;
+        }
         ctx.fillStyle="#b1956e";
-        ctx.arc(296, Ymax/2, 7, 0, 2 * Math.PI);
-        ctx.arc(512, Ymax/2, 7, 0, 2 * Math.PI);
-        ctx.arc(726, Ymax/2, 7, 0, 2 * Math.PI);
-        ctx.arc(942, Ymax/2, 7, 0, 2 * Math.PI);
-        ctx.fill();
+        for (var i=296; i<=1158;) {
+            ctx.arc(i, Ymax / 2, 7, 0, 2 * Math.PI);
+            ctx.fill();
+            i=i+216;
+        }
 
         for (var i=26; i<Ymax;){
             ctx.beginPath();
