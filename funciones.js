@@ -81,11 +81,11 @@
         document.getElementById("notamusical").disabled=true;
         document.getElementById("opciones").disabled=true;
         document.getElementById("sostenido").disabled=true;
-        var Xmax= canvas.width;
-        var Ymax= canvas.height;
+
         var medio=54;
 
-        onload=setInterval(Pua,5);
+        onload=setInterval(Pua,3);
+
 
         if(nota==""){
             alert("Ingrese una nota musical ♪");
@@ -489,13 +489,15 @@ function Pua (){
     var ctx = canvas.getContext("2d");
     var nota = document.getElementById("notamusical").value;
     var img= new Image ();
-    img.src="Imagenes/guitar-pick.png";
+    img.src="Imagenes/pick2.png";
     if(nota!=""){
+
         img.onload = function()
         {
-            ctx.drawImage(img, 1000, y, img.width / 5, img.height / 5);
+            ctx.drawImage(img, 1000, y, img.width / 7, img.height / 7);
         }
-        y=y-8;
+        y=y-50;
+
     }
     }
 
